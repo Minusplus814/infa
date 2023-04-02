@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+	<title>Generator rudolfów</title>
+	<style>
+		body {
+			background-color: lightblue;
+			color: #000;
+			font-family: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', sans-serif;
+
+
+		}
+		h1 {
+			color: #000;
+		}
+		button {
+			background-color: #fff;
+			color: #222;
+			padding: 10px;
+			border-radius: 5px;
+			cursor: pointer;
+			border: none;
+		}
+	</style>
+</head>
+<body>
+	<h1><img src="Rudolf.jpg" alt="Smiley face" style="float:right;width:50%;height:50%;">Generator rudolfów</h1>
+	<p>Ta strona pozwoli ci wygenerować przelicznik na najlepszą jednostkę świata, czyli Rudolfy.<br> Uwaga! przelicznia mogą się zmienić po ponownym naciśnięciu przycisku. Zawsze używaj najnowszej wersji rudolfów</p>
+	<button onclick="generateRandomRudolf()">Przelicz</button>
+
+	<script>
+		function generateRandomRudolf() {
+			var randomRudolf1 = Math.floor(Math.random() * 10000) + 1;
+            var randomRudolf2 = Math.floor(Math.random() * 10000) + 1;
+			document.getElementById("randomRudolf").innerHTML = randomRudolf1/1000 + " metra";
+            document.getElementById("angularRudolf").innerHTML = randomRudolf2/1000/3.14 + "rad";
+            document.getElementById("secondRudolf").innerHTML =1/ randomRudolf2/1000/3.14 + "Hz ";
+
+
+		}
+	</script>
+	<table>
+  <tr>
+    <th>Rudolfy</th>
+    <th>Odpowiednik w układzie SI</th>
+  </tr>
+  <tr>
+    <td>1 Rudolf</td>
+    <td><p id="randomRudolf"></p></td>
+  </tr>
+  <tr>
+    <td>Rudolf kątowy</td>
+    <td><p id="angularRudolf"></p></td>
+  </tr>
+  <tr>
+    <td>1 rudolf kątowy na sekundę</td>
+    <td><p id="secondRudolf"></p></td>
+  </tr>
+
+</table>
+<a href="index.html">Powrót na stronę główną</a>
+</body>
+</html>

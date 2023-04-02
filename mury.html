@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<script>
+
+</script>
+<head>
+	<meta charset="UTF-8">
+	<title>Random Uppercase Character Generator</title>
+</head>
+<style>
+body{
+font-family: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', sans-serif;
+background-color: lightblue;
+}
+p{
+color: var(--main-bg-color);
+font-size:40px;
+text-align:center;
+}
+</style>
+<body>
+	<h1><img src="lol.jpg" alt="Smiley face" style="float:right;width:50%;height:50%;">Generator grafitti</h1>
+	<h2>Jak dużo czasu mieli artyści zanim policja przyjechała:</h2>
+	<input type="number" id="dlugosc" value="8" min="1">
+	<button onclick="generuj()">welp...</button>
+	<h2>Wygenerowany tekst:  </h2>
+	<p id="random-string"></p>
+	<script>
+		function generuj() {
+			let result = '';
+			const znaki = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*';
+			const znakiLength = znaki.length;
+			const stringLength = document.getElementById('dlugosc').value;
+			for ( let i = 0; i < stringLength; i++ ) {
+				result += znaki.charAt(Math.floor(Math.random() * znakiLength))+ " ";
+			}
+			document.getElementById('random-string').innerHTML = result;
+			const randomColor = "#"+((1<<24)*Math.random()|0).toString(16);
+
+            document.documentElement.style.setProperty('--main-bg-color', randomColor);
+		}
+	</script>
+	<a href="index.html">Powrót na stronę główną</a>
+
+</body>
+</html>
